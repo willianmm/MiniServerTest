@@ -9,6 +9,7 @@ public class Server {
         System.out.println("Waiting for clients...");
         ServerSocket ss = new ServerSocket(8080);
         Socket soc = ss.accept();
+        System.out.println("Client connected that IP " + soc.getInetAddress().getHostAddress());
         System.out.println("connection established");
         BufferedReader in = new BufferedReader(new InputStreamReader(soc.getInputStream()));
         double number = Double.parseDouble(in.readLine());
